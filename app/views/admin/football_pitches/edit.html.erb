@@ -1,0 +1,22 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <h2 class="text-center display-4"><%= t "football_pitches.edit_pitch_title" %></h2>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+    <div class="container mx-auto">
+      <div class="flex justify-center mt-8">
+        <div class="w-2/3 pb-2">
+          <%= render "form", item: @football_pitch, url: admin_football_pitch_path(@football_pitch) %>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+</div>

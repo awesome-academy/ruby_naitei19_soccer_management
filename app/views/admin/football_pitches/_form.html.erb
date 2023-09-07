@@ -1,0 +1,54 @@
+<%= render "user/shared/error_messages", object: item %>
+<%= form_with model: item, url: url do |form| %>
+  
+  <div class="mt-4">
+    <%= form.label :name, t("football_pitches.form.title"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.title") %>
+    <p class="text-danger"><%= show_errors(item, :name) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :location, t("football_pitches.form.location"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :location, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.location") %>
+    <p class="text-danger"><%= show_errors(item, :location) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :length, t("football_pitches.form.length"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :length, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.length") %>
+    <p class="text-danger"><%= show_errors(item, :length) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :width, t("football_pitches.form.width"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :width, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.width") %>
+    <p class="text-danger"><%= show_errors(item, :width) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :capacity, t("football_pitches.form.capacity"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :capacity, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.capacity") %>
+    <p class="text-danger"><%= show_errors(item, :capacity) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :price, t("football_pitches.form.price"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :price, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.price") %>
+    <p class="text-danger"><%= show_errors(item, :price) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :description, t("football_pitches.form.description"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :description, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300", placeholder: t("football_pitches.form.description") %>
+    <p class="text-danger"><%= show_errors(item, :description) %></p>
+  </div>
+  <div class="mt-4">
+    <%= form.label :football_pitch_types, t("football_pitches.form.football_pitch_types"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :football_pitch_types, [["Slot 5", "slot5"], ["Slot 7", "slot7"], ["Slot 10", "slot10"]], class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300" %>
+    <p class="text-danger"><%= show_errors(item, :football_pitch_types) %></p>
+  </div>
+  
+  <div class="mt-4">
+    <%= form.label :images, t("football_pitches.form.upload_images"), class: "block text-sm font-medium text-gray-700" %>
+    <%= form.file_field :images, multiple: true, class: "mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300 focus:border-indigo-300" %>
+    <p class="text-danger"><%= show_errors(item, :images) %></p>
+  </div>
+  
+  <div class="mt-6">
+    <%= form.submit t("football_pitches.form.submit"), class: "px-4 py-2 !bg-indigo-500 text-white rounded-md hover:bg-indigo-900 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-50" %>
+  </div>
+<% end %>

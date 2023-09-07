@@ -5,6 +5,7 @@ ruby "3.2.2"
 
 gem "bcrypt", "3.1.18"
 gem "bootsnap", require: false
+gem "cocoon", "~> 1.2"
 gem "config", "~> 4.2"
 gem "faker"
 gem "figaro", "~> 1.2"

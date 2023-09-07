@@ -1,0 +1,26 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <h2 class="text-center display-4"><%= t "football_pitches.title" %></h2>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="mx-3 mt-2 flex justify-end">
+        <button class="btn btn-primary">
+          <%= link_to "Create new pitch", new_admin_football_pitch_path, class: "custom-link" %>
+        </button>
+      </div>
+      <div class="flex flex-column mt-2 mx-3 overflow-hidden overflow-y-scroll list-pitch">
+        <% @list_football_pitches.each do |football_pitch| %>
+          <%= render "admin/components/pitch_item", football_pitch: football_pitch %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

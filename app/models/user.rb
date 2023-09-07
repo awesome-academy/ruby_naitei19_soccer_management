@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+  # callback
   before_save :downcase_email!
+
+  # validate
   validates :phone, presence: true
   validates :name, presence: true, length: {maximum: Settings.users.max_name}
   validates :password, presence: true,
@@ -14,6 +17,7 @@ class User < ApplicationRecord
   has_many :favorite_pitches, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
   private
   def downcase_email!
     email.downcase!

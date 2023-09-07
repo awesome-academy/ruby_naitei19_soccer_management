@@ -1,7 +1,7 @@
 <div class="container mx-auto">
   <div class="flex justify-center mt-8">
     <div class="w-2/3">
-    <%= render "shared/error_messages" %>
+    <%= render "shared/error_messages", object: @user %>
       <div class="mt-3">
         <h1 class="text-2xl font-semibold"><%= t("sign_up.title") %></h1>
       </div>

@@ -12,6 +12,8 @@ module RailsTutorial
     config.load_defaults 7.0
 
     config.time_zone = Settings.time_zone
+    # Store files locally.
+    config.active_storage.service = :local
 
     # Configuration for the application, engines, and railties goes here.
     #

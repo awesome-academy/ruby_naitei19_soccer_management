@@ -1,1 +1,1 @@
-// all admin script goes to here
+// all js script from admin view goes to here

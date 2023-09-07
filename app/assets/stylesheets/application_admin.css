@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.list-pitch {
+    max-height: 400px;
+}
+
+.custom-link {
+    color: unset;
+    text-decoration: unset;
+}
