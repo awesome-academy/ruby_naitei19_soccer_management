@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     # User scope
     scope module: "user" do
       root "static_pages#index"
+      post "auth/:provider", to: "google_sessions#log_in"
 
       # resources
       resources :football_pitches, only: %i(index)

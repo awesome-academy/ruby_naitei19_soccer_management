@@ -13,6 +13,9 @@ gem "font-awesome-sass", "~> 6.4"
 gem "importmap-rails"
 gem "jbuilder"
 gem "mysql2", "~> 0.5"
+gem "omniauth", "~> 2.1"
+gem "omniauth-google-oauth2", "~> 1.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "pagy"
 gem "pry-rails"
 gem "puma", "~> 5.0"
@@ -42,3 +45,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "rack-cors", "~> 2.0"

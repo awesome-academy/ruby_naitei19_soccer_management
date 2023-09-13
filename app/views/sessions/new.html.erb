@@ -23,5 +23,6 @@
   <footer>
     <%= link_to t("login.form.forget_pass"), new_password_reset_path, class: "hover:text-pink-700 text-sm float-left" %>
     <%= link_to t("sign_up.title"), signup_path, class: "hover:text-pink-700 text-sm float-right" %>
+    <%= link_to "Log In with Google", "/auth/google_oauth2", method: :post %>
   </footer>
 </div>

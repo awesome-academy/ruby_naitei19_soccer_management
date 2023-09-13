@@ -41,6 +41,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def from_omniauth auth
+      where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap
+    end
   end
 
   def remember
