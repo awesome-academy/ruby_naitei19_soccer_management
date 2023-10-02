@@ -6,6 +6,8 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'factory_bot_rails'
+require 'shoulda/matchers'
+require 'shoulda-callback-matchers'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -62,4 +64,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Callback::Matchers::ActiveModel)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end
